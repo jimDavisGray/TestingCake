@@ -6,5 +6,10 @@
         {
             return "Woof";
         }
+		
+		public string ToMe()
+        {
+            return "Woof";
+        }
     }
 }
