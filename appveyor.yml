@@ -5,14 +5,14 @@ build_script:
 test: off
 
 artifacts:
-  - path: bin
+  - path: C:/projects/testingcake/src/Example.Tests/bin/*
     name: test
     type: zip
 
 deploy:
   provider: S3
-  access_key_id: AKIAYSQOERVO7OFBME6D
-  secret_access_key: MEfjP/XEY9jCRQ9yoFqXHEXYuFsNosml2Vkr5zGd
+  access_key_id: 
+  secret_access_key: 
   bucket: rockport-saml-test-sp
   region: us-east-2
   unzip: false
