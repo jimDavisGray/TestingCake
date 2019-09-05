@@ -3,3 +3,14 @@ image: Visual Studio 2015
 build_script:
 - cmd: PowerShell -Version 2.0 .\build.ps1
 test: off
+
+deploy:
+  provider: S3
+  access_key_id:AKIAYSQOERVO7OFBME6D
+  secret_access_key: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
+  bucket:rockport-saml-test-sp
+  region: us-east-2
+  unzip: false
+  set_public: true
+  folder:code
+  artifact:C:\projects\testingcake\bin\Release\Example.dll
