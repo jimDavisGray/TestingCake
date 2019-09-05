@@ -5,7 +5,7 @@ build_script:
 test: off
 
 artifacts:
-  - path: C:/projects/testingcake/src/Example.Tests/bin/*
+  - path: /bin/*
     name: test
     type: zip
 
