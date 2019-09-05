@@ -2,6 +2,7 @@
 {
     public interface IAnimal
     {
-        string Talk();
+        
+		string Talk();
     }
 }
