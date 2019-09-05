@@ -5,7 +5,7 @@ build_script:
 test: off
 
 artifacts:
-  - path: /bin/*
+  - path: bin
     name: test
     type: zip
 
@@ -18,4 +18,4 @@ deploy:
   unzip: false
   set_public: true
   folder: code
-  artifact: C:\projects\testingcake\bin\Release\Example.dll
+  artifact: test
