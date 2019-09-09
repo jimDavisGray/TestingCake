@@ -16,20 +16,21 @@ environment:
 artifacts:
 - path: src\Example\bin\Release\Example.dll
   name: test
+  type: zip
   
-install:
-- cmd: echo %USERPROFILE%
-- ps: |
-    Write-Host "Installing AWS CLI..." -ForegroundColor Cyan
-    Write-Host "Downloading..."
-    $msiPath = "$($env:USERPROFILE)\AWSCLI64.msi"
-    (New-Object Net.WebClient).DownloadFile('https://s3.amazonaws.com/aws-cli/AWSCLI64.msi', $msiPath)
-    Write-Host "Installing..."
-    cmd /c start /wait msiexec /i $msiPath /quiet
-    del $msiPath
-    Write-Host "Done Installing..."
-- cmd: aws --version
-- cmd: |
-    set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_E%
-    set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY_E%
-    aws s3 ls jimdavisgray-s3-proxy
+#install:
+#- cmd: echo %USERPROFILE%
+#- ps: |
+#    Write-Host "Installing AWS CLI..." -ForegroundColor Cyan
+#    Write-Host "Downloading..."
+#    $msiPath = "$($env:USERPROFILE)\AWSCLI64.msi"
+#    (New-Object Net.WebClient).DownloadFile('https://s3.amazonaws.com/aws-cli/AWSCLI64.msi', $msiPath)
+#    Write-Host "Installing..."
+#    cmd /c start /wait msiexec /i $msiPath /quiet
+#    del $msiPath
+#    Write-Host "Done Installing..."
+#- cmd: aws --version
+#- cmd: |
+#    set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_E%
+#    set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY_E%
+#    aws s3 ls jimdavisgray-s3-proxy
