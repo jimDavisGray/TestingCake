@@ -30,6 +30,6 @@ install:
     Write-Host "Done Installing..."
 - cmd: aws --version
 - cmd: |
-    set set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_E%
-    set set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY_E%
+    set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_E%
+    set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY_E%
     aws s3 ls jimdavisgray-s3-proxy
