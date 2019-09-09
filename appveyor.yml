@@ -1,8 +1,18 @@
 version: 1.0.{build}
+
 image: Visual Studio 2015
+
 build_script:
 - cmd: PowerShell -Version 2.0 .\build.ps1
+
 test: off
+
+environment:
+  AWS_ACCESS_KEY:
+    secure: FN72ZHb1jZ3j/h5e9jUYxP64tthq+nOsSuQORdWq5q0=
+  AWS_SECRET_ACCESS_KEY:
+    secure: C01yPtM3FhqQoQBMUjt8UCfJGg5RMcuWcTQYNMsPmgKTGnrB1oq56Q6uoVMM50Xf
+
 artifacts:
 - path: src\Example\bin\Release\Example.dll
   name: test
@@ -19,3 +29,4 @@ install:
     del $msiPath
     Write-Host "Done Installing..."
 - cmd: aws --version
+- cmd: aws s3 ls jimdavisgray-s3-proxy
