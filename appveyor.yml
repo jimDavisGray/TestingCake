@@ -8,6 +8,7 @@ artifacts:
   name: test
   
 install:
+- cmd: echo %USERPROFILE%
 - ps: >-
     Write-Host "Installing AWS CLI..." -ForegroundColor Cyan
     Write-Host "Downloading..."
@@ -19,7 +20,6 @@ install:
     cmd /c start /wait msiexec /i $msiPath /quiet
     del $msiPath
     Write-Host "Done Installing..."
-
-
+- cmd: dir %USERPROFILE%
 
 
