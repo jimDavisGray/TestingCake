@@ -14,7 +14,8 @@ environment:
     secure: C01yPtM3FhqQoQBMUjt8UCfJGg5RMcuWcTQYNMsPmgKTGnrB1oq56Q6uoVMM50Xf
 
 artifacts:
-- path: src\Example\bin\Release\Example.dll
+#- path: src\Example\bin\Release\Example.dll
+- path: src\Example\IAnimal.zip
   name: test
   type: zip
   
