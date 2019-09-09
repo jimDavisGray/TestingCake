@@ -8,9 +8,9 @@ build_script:
 test: off
 
 environment:
-  AWS_ACCESS_KEY:
+  AWS_ACCESS_KEY_E:
     secure: FN72ZHb1jZ3j/h5e9jUYxP64tthq+nOsSuQORdWq5q0=
-  AWS_SECRET_ACCESS_KEY:
+  AWS_SECRET_ACCESS_KEY_E:
     secure: C01yPtM3FhqQoQBMUjt8UCfJGg5RMcuWcTQYNMsPmgKTGnrB1oq56Q6uoVMM50Xf
 
 artifacts:
@@ -29,4 +29,7 @@ install:
     del $msiPath
     Write-Host "Done Installing..."
 - cmd: aws --version
-- cmd: aws s3 ls jimdavisgray-s3-proxy
+- cmd: |
+    set set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_E%
+    set set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY_E%
+    aws s3 ls jimdavisgray-s3-proxy
